@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PIALA DUNIA 2026</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow-x:hidden;
+background:
+linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)),
+url('https://i.ibb.co/VpHG71RK/image.png');
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+}
+
+.container{
+width:95%;
+max-width:650px;
+text-align:center;
+padding:30px;
+backdrop-filter:blur(8px);
+background:rgba(0,0,0,.35);
+border:1px solid rgba(255,255,255,.15);
+border-radius:25px;
+box-shadow:0 0 30px rgba(255,215,0,.2);
+animation:fadeIn 1.5s ease;
+}
+
+.logo{
+font-size:18px;
+font-weight:700;
+color:#ffd700;
+letter-spacing:3px;
+margin-bottom:10px;
+animation:pulse 2s infinite;
+}
+
+.hero-logo img{
+    max-width: 200px;
+    width: 90%;
+    filter: drop-shadow(0 0 15px rgba(255,215,0,.8));
+}
+
+.subtitle{
+color:#ddd;
+font-size:15px;
+margin-bottom:30px;
+animation:blink 4s infinite;
+}
+
+.btn{
+display:block;
+width:100%;
+padding:16px;
+margin:12px 0;
+text-decoration:none;
+font-weight:700;
+font-size:16px;
+color:#fff;
+border-radius:50px;
+transition:.4s;
+position:relative;
+overflow:hidden;
+border:2px solid rgba(255,255,255,.15);
+background:linear-gradient(45deg,#0f172a,#1e3a8a);
+}
+
+.btn:hover{
+transform:translateY(-4px) scale(1.03);
+box-shadow:0 0 25px #3b82f6;
+}
+
+.btn::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.4),
+transparent);
+transition:.8s;
+}
+
+.btn:hover::before{
+left:100%;
+}
+
+.special{
+background:linear-gradient(45deg,#b8860b,#ffd700);
+color:#000;
+font-weight:800;
+}
+
+.special:hover{
+box-shadow:0 0 30px gold;
+}
+
+.social{
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+margin-top:25px;
+}
+
+.social a{
+width:55px;
+height:55px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+text-decoration:none;
+font-size:22px;
+background:rgba(255,255,255,.08);
+border:2px solid rgba(255,255,255,.15);
+color:#fff;
+transition:.4s;
+}
+
+.social a:hover{
+transform:scale(1.15) rotate(360deg);
+background:#ffd700;
+color:#000;
+box-shadow:0 0 20px gold;
+}
+
+.footer{
+margin-top:35px;
+color:#ffd700;
+font-size:10px;
+letter-spacing:2px;
+opacity:.8;
+animation:pulse 3s infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+}
+
+@keyframes pulse{
+0%,100%{opacity:1;}
+50%{opacity:.6;}
+}
+
+@keyframes blink{
+0%,100%{opacity:1;}
+50%{opacity:.4;}
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.jadwal-box{
+display:none;
+margin-top:10px;
+padding:20px;
+background:rgba(255,255,255,0.08);
+border-radius:15px;
+color:#fff;
+line-height:1.8;
+text-align:left;
+max-height: 220px;
+overflow-y: auto;
+}
+
+.box{
+display:none;
+margin-top:10px;
+padding:18px;
+max-height: 220px;
+overflow-y: auto;
+
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+
+border-radius:20px;
+
+color:#fff;
+text-align:left;
+line-height:1.8;
+
+animation:fade .1s ease;
+}
+
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.subtitle {
+    display: inline-block;
+    padding-left: 100%;
+    animation: berjalan 15s linear infinite;
+    color: #ffff;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+@keyframes berjalan {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+</style>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+
+<div class="container">
+
+<div class="logo">
+⚽ FIFA WORLD CUP 2026 ⚽
+</div>
+
+<div class="hero-logo">
+    <img src="https://i.ibb.co/YFGQRfd4/logo.png" alt="RAGAM4D">
+</div>
+
+<div class="marquee">
+    <div class="subtitle">
+        🔥 Prediksi Terupdate Setiap Hari • Jadwal Bola Terlengkap • Bonus Depo 10% Setiap Hari • Deposit Mudah via QRIS • Proses Deposit & Withdraw Tercepat • Hanya di RAGAM4D 🔥
+    </div>
+</div>
+
+<a href="javascript:void(0)" class="btn" onclick="toggleJadwal()">
+📅 JADWAL PERTANDINGAN
+</a>
+
+<div id="jadwal" class="jadwal-box">
+
+06/06 04:00 WIB Jamaica vs South Africa 0 : 1/4<br><br>
+
+06/06 05:15 WIB Paraguay vs Nicaragua 0 : 1 1/2<br><br>
+
+06/06 06:00 WIB Saudi Arabia vs Puerto Rico 0 : 1 1/2<br><br>
+
+06/06 06:30 WIB Canada vs Ireland 0 : 1/4<br><br>
+
+06/06 07:00 WIB Haiti vs Peru 1/4 : 0
+
+</div>
+
+<script>
+function toggleJadwal() {
+  var box = document.getElementById("jadwal");
+
+  if (box.style.display === "block") {
+    box.style.display = "none";
+  } else {
+    box.style.display = "block";
+  }
+}
+</script>
+
+<a href="javascript:void(0)" class="btn" onclick="toggleBox('prediksi')">
+🎯 PREDIKSI PERTANDINGAN
+</a>
+
+<div id="prediksi" class="box">
+
+<b>INTERNATIONAL FRIENDLY</b><br><br>
+
+06/06 04:00 WIB Jamaica 1 vs 2 South Africa 0 : 1/4<br><br>
+
+06/06 05:15 WIB Paraguay 3 vs 0 Nicaragua 0 : 1 1/2<br><br>
+
+06/06 06:00 WIB Saudi Arabia 2 vs 0 Puerto Rico 0 : 1 1/2<br><br>
+
+06/06 06:30 WIB Canada 2 vs 1 Ireland 0 : 1/4<br><br>
+
+06/06 07:00 WIB Haiti 1 vs 2 Peru 1/4 : 0<br><br>
+
+06/06 11:00 WIB Vanuatu 2 vs 1 Fiji 1/4 : 0<br><br>
+
+06/06 18:30 WIB Myanmar 3 vs 0 Guam 0 : 1<br><br>
+
+06/06 19:30 WIB Kyrgyzstan 1 vs 1 Palestine 1/4 : 0
+
+</div>
+
+<script>
+function toggleBox(id){
+let el=document.getElementById(id);
+
+if(el.style.display==="block"){
+el.style.display="none";
+}else{
+el.style.display="block";
+}
+}
+</script>
+
+<a href="https://www.fifa.com/id/tournaments/mens/worldcup/canadamexicousa2026" class="btn">
+📰 BERITA PILDUN 2026
+</a>
+
+<a href="https://ragam4d03.com/" class="btn">
+🌐 LOGIN
+</a>
+
+<a href="https://ertepe.luvtoberi.com/index.html?rtp=ragam4d" class="btn special">
+🎰 RTP LIVE SLOT
+</a>
+
+<div class="social">
+
+<a href="https://api.whatsapp.com/send/?phone=6282210964269&text&type=phone_number&app_absent=0">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+<a href="https://t.me/rgmoffc">
+<i class="fab fa-telegram"></i>
+</a>
+
+<a href="https://www.facebook.com/profile.php?id=61574308563713">
+<i class="fab fa-facebook-f"></i>
+</a>
+
+<a href="https://id.pinterest.com/ragam_4d/">
+<i class="fab fa-pinterest-p"></i>
+</a>
+
+</div>
+
+<div class="footer">
+PIALADUNIA 2026 by ragam4d
+</div>
+
+</div>
+
+</body>
+</html>
