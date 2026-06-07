@@ -488,5 +488,19 @@ PIALADUNIA 2026 by ragam4d
 
 <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=3be16e60-21d4-4e28-827f-06fa4f5c339e"></script>
 
+<script>
+document.addEventListener('contextmenu', e => e.preventDefault());
+
+document.onkeydown = function(e) {
+  if (
+    e.keyCode == 123 ||
+    (e.ctrlKey && e.shiftKey && e.keyCode == 73) ||
+    (e.ctrlKey && e.keyCode == 85)
+  ) {
+    return false;
+  }
+};
+</script>
+
 </body>
 </html>
