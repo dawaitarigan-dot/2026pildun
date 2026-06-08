@@ -682,20 +682,6 @@ PIALADUNIA 2026 by ragam4d
 <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=3be16e60-21d4-4e28-827f-06fa4f5c339e"></script>
 
 <script>
-document.addEventListener('contextmenu', e => e.preventDefault());
-
-document.onkeydown = function(e) {
-  if (
-    e.keyCode == 123 ||
-    (e.ctrlKey && e.shiftKey && e.keyCode == 73) ||
-    (e.ctrlKey && e.keyCode == 85)
-  ) {
-    return false;
-  }
-};
-</script>
-
-<script>
 
 let currentSlide = 0;
 
@@ -735,6 +721,32 @@ setInterval(()=>{
 nextSlide();
 },5000);
 
+</script>
+
+<script>
+document.addEventListener('contextmenu', e => e.preventDefault());
+
+document.onkeydown = function(e){
+  if(
+    e.keyCode == 123 ||
+    (e.ctrlKey && e.shiftKey && e.keyCode == 73) ||
+    (e.ctrlKey && e.shiftKey && e.keyCode == 74) ||
+    (e.ctrlKey && e.keyCode == 85) ||
+    (e.ctrlKey && e.keyCode == 83)
+  ){
+    return false;
+  }
+};
+
+setInterval(function(){
+  if(
+    window.outerWidth - window.innerWidth > 160 ||
+    window.outerHeight - window.innerHeight > 160
+  ){
+    document.body.innerHTML =
+    "<h1 style='color:white;text-align:center;margin-top:100px'>ACCESS DENIED</h1>";
+  }
+},1000);
 </script>
 
 </body>
