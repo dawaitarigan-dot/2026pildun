@@ -287,28 +287,122 @@ border-radius:10px;
 transform:scale(1.05);
 }
 
-.marquee {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
+.premium-marquee{
+    position:relative;
+    width:100%;
+    height:54px;
+    margin:18px 0;
+    overflow:hidden;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    box-shadow:
+        inset 0 0 15px rgba(255,255,255,.08),
+        0 0 15px rgba(255,255,255,.12);
 }
 
-.subtitle {
-    display: inline-block;
-    padding-left: 100%;
-    animation: berjalan 15s linear infinite;
-    color: #ffff;
-    font-size: 15px;
-    font-weight: bold;
+/* Glow putih kiri */
+.premium-marquee::before{
+    content:"";
+    position:absolute;
+    left:-40px;
+    top:-20px;
+
+    width:90px;
+    height:90px;
+
+    background:radial-gradient(circle,
+        rgba(255,255,255,.55),
+        transparent 70%);
 }
 
-@keyframes berjalan {
-    0% {
-        transform: translateX(0);
+/* Kilatan putih */
+.premium-marquee::after{
+    content:"";
+    position:absolute;
+    top:-30%;
+    left:-40%;
+
+    width:70px;
+    height:180%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.95),
+        transparent
+    );
+
+    filter:blur(2px);
+    transform:rotate(25deg);
+
+    animation:shine 4s linear infinite;
+}
+
+@keyframes premiumScroll{
+    from{
+        transform:translateX(0);
     }
-    100% {
-        transform: translateX(-100%);
+    to{
+        transform:translateX(-100%);
     }
+}
+
+@keyframes shine{
+
+    0%{
+        left:-40%;
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    35%{
+        left:120%;
+        opacity:0;
+    }
+
+    100%{
+        left:120%;
+        opacity:0;
+    }
+}
+
+.premium-track{
+    display:inline-block;
+    white-space:nowrap;
+    padding-left:100%;
+
+    line-height:54px;
+
+    font-size:15px;
+    font-weight:700;
+
+    color:#ffffff;
+
+    text-shadow:
+        0 0 6px rgba(255,255,255,.5);
+
+    animation:premiumScroll 20s linear infinite;
+}
+
+@keyframes premiumScroll{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-100%);
+    }
+
 }
 
 .slider-container{
@@ -536,31 +630,84 @@ display:block;
 }
 
 .top-marquee{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:30px;
-background:#4a4a4a;
-overflow:hidden;
-z-index:9999;
-display:flex;
-align-items:center;
-border-bottom:1px solid rgba(255,255,255,.2);
+    width:100%;
+    height:52px;
+    margin:18px 0;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+
+    position:relative;
+
+    border-radius:30px;
+    border:1px solid rgba(255,215,0,.5);
+
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(14px);
+
+    box-shadow:
+    inset 0 0 20px rgba(255,255,255,.08),
+    0 0 15px rgba(255,215,0,.18);
+}
+/* Glow putih kiri */
+.top-marquee::before{
+    content:"";
+    position:absolute;
+    left:-35px;
+    top:-20px;
+
+    width:90px;
+    height:90px;
+
+    background:radial-gradient(
+        circle,
+        rgba(255,255,255,.55),
+        transparent 70%);
+}
+
+/* Efek kilat */
+.top-marquee::after{
+    content:"";
+    position:absolute;
+    top:-30%;
+    left:-40%;
+
+    width:70px;
+    height:180%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.95),
+        transparent
+    );
+
+    filter:blur(2px);
+    transform:rotate(25deg);
+
+    animation:shineTop 5s linear infinite;
 }
 
 .top-marquee span{
-display:inline-block;
-white-space:nowrap;
-padding-left:100%;
-font-size:14px;
-font-weight:700;
-animation:
-marquee 20s linear infinite,
-warna 4s linear infinite;
-text-shadow:
-0 0 5px currentColor,
-0 0 10px currentColor;
+
+    display:inline-block;
+
+    white-space:nowrap;
+
+    padding-left:100%;
+
+    line-height:42px;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+    text-shadow:
+        0 0 5px rgba(255,255,255,.6);
+
+    animation:marqueeTop 28s linear infinite;
 }
 
 @keyframes marquee{
@@ -572,25 +719,39 @@ transform:translateX(-100%);
 }
 }
 
-@keyframes warna{
-0%{
-color:#ff0000;
+@keyframes marqueeTop{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-100%);
+    }
+
 }
-20%{
-color:#ffd700;
-}
-40%{
-color:#00ff00;
-}
-60%{
-color:#00ffff;
-}
-80%{
-color:#ff00ff;
-}
-100%{
-color:#ff0000;
-}
+
+@keyframes shineTop{
+
+    0%{
+        left:-40%;
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    35%{
+        left:120%;
+        opacity:0;
+    }
+
+    100%{
+        left:120%;
+        opacity:0;
+    }
+
 }
 
 body{
@@ -618,12 +779,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 </head>
 <body>
 
-<div class="top-marquee">
-<span>
-🔊 Ragam4D Menghadirkan Pengalaman Hiburan Digital Generasi Baru Dengan Akses Responsif, Pilihan Permainan Interaktif, Sistem Stabil, Dan Layanan Online Yang Aktif Setiap Hari Untuk Kenyamanan Pengguna.
-</span>
-</div>
-
 <div class="container">
 
 <div class="logo">
@@ -632,6 +787,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <div class="hero-logo">
     <img src="https://i.ibb.co/YFGQRfd4/logo.png" alt="RAGAM4D">
+</div>
+
+<div class="top-marquee">
+<span>
+🔊 Ragam4D Menghadirkan Pengalaman Hiburan Digital Generasi Baru Dengan Akses Responsif, Pilihan Permainan Interaktif, Sistem Stabil, Dan Layanan Online Yang Aktif Setiap Hari Untuk Kenyamanan Pengguna.
+</span>
 </div>
 
 <div class="slider-container">
@@ -1238,9 +1399,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 </div>
 
-<div class="marquee">
-    <div class="subtitle">
-        🔥 Prediksi Terupdate Setiap Hari • Jadwal Bola Terlengkap • Bonus Depo 10% Setiap Hari • Deposit Mudah via QRIS • Proses Deposit & Withdraw Tercepat • Hanya di RAGAM4D 🔥
+<div class="premium-marquee">
+    <div class="premium-track">
+        ✨ PREDIKSI TERUPDATE SETIAP HARI • JADWAL BOLA TERLENGKAP • BONUS DEPO 10% SETIAP HARI • DEPOSIT MUDAH VIA QRIS • PROSES DEPOSIT & WITHDRAW TERCEPAT • HANYA DI RAGAM4D ✨
     </div>
 </div>
 
