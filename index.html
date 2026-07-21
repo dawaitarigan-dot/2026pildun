@@ -1,1033 +1,495 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>PIALA DUNIA 2026</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <title>Bank Digital</title>
 
-<style>
+    <link rel="stylesheet" href="style.css">
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
-body{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-overflow-x:hidden;
-background:
-linear-gradient(rgba(0,0,0,.26),rgba(0,0,0,.25)),
-url('https://i.ibb.co/rLGHcqQ/image.png');
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
-}
-
-.container{
-width:95%;
-max-width:650px;
-text-align:center;
-padding:30px;
-backdrop-filter:blur(8px);
-background:rgba(0,0,0,.35);
-border:1px solid rgba(255,255,255,.15);
-border-radius:25px;
-box-shadow:0 0 30px rgba(255,215,0,.2);
-animation:fadeIn 1.5s ease;
-}
-
-.logo{
-font-size:14px;
-font-weight:700;
-color:#ffd700;
-letter-spacing:3px;
-margin-bottom:10px;
-animation:pulse 2s infinite;
-}
-
-.hero-logo img{
-    max-width: 200px;
-    width: 100%;
-	margin:-35px 0;
-    filter: drop-shadow(0 0 15px rgba(255,215,0,.8));
-}
-
-.subtitle{
-color:#ddd;
-font-size:15px;
-margin-bottom:30px;
-animation:blink 4s infinite;
-}
-
-.btn{
-display:block;
-width:100%;
-padding:16px;
-margin:12px 0;
-text-decoration:none;
-font-weight:700;
-font-size:16px;
-color:#fff;
-border-radius:50px;
-transition:.4s;
-position:relative;
-overflow:hidden;
-border:2px solid rgba(255,255,255,.15);
-background:linear-gradient(45deg,#0f172a,#1e3a8a);
-}
-
-.btn:hover{
-transform:translateY(-4px) scale(1.03);
-box-shadow:0 0 25px #3b82f6;
-}
-
-.btn::before{
-content:"";
-position:absolute;
-top:0;
-left:-100%;
-width:100%;
-height:100%;
-background:linear-gradient(
-90deg,
-transparent,
-rgba(255,255,255,.4),
-transparent);
-transition:.8s;
-}
-
-.btn:hover::before{
-left:100%;
-}
-
-.special{
-background:linear-gradient(45deg,#b8860b,#ffd700);
-color:#000;
-font-weight:800;
-}
-
-.special:hover{
-box-shadow:0 0 30px gold;
-}
-
-.social{
-display:flex;
-justify-content:center;
-gap:12px;
-flex-wrap:wrap;
-margin-top:25px;
-}
-
-.social a{
-width:55px;
-height:55px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-text-decoration:none;
-font-size:22px;
-background:rgba(255,255,255,.08);
-border:2px solid rgba(255,255,255,.15);
-color:#fff;
-transition:.4s;
-}
-
-.social a:hover{
-transform:scale(1.15) rotate(360deg);
-background:#ffd700;
-color:#000;
-box-shadow:0 0 20px gold;
-}
-
-.footer{
-margin-top:35px;
-color:#ffd700;
-font-size:10px;
-letter-spacing:2px;
-opacity:.8;
-animation:pulse 3s infinite;
-}
-
-@keyframes float{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-10px);}
-}
-
-@keyframes pulse{
-0%,100%{opacity:1;}
-50%{opacity:.6;}
-}
-
-@keyframes blink{
-0%,100%{opacity:1;}
-50%{opacity:.4;}
-}
-
-@keyframes fadeIn{
-from{
-opacity:0;
-transform:translateY(30px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-.jadwal-box{
-display:none;
-margin-top:10px;
-padding:20px;
-background:rgba(255,255,255,0.08);
-border-radius:15px;
-color:#fff;
-line-height:1.8;
-text-align:left;
-max-height: 220px;
-overflow-y: auto;
-}
-
-.box{
-display:none;
-margin-top:10px;
-padding:18px;
-max-height: 220px;
-overflow-y: auto;
-
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(10px);
-
-border-radius:20px;
-
-color:#fff;
-text-align:left;
-line-height:1.8;
-
-animation:fade .1s ease;
-}
-
-.match-card{
-margin:20px 0;
-padding:20px;
-border-radius:20px;
-background:rgba(0,0,0,.55);
-backdrop-filter:blur(10px);
-border:1px solid rgba(255,255,255,.1);
-}
-
-.match-title{
-font-size:14px;
-font-weight:700;
-color:#fff;
-margin-bottom:8px;
-}
-
-.match-time{
-color:#ffd700;
-font-weight:700;
-margin-bottom:15px;
-}
-
-.match-row{
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.team{
-width:35%;
-text-align:center;
-color:#fff;
-}
-
-.team img{
-width:60px;
-height:60px;
-object-fit:contain;
-margin-bottom:8px;
-}
-
-.score{
-font-size:45px;
-font-weight:800;
-color:#fff;
-margin-bottom:10px;
-display:flex;
-justify-content:center;
-align-items:center;
-gap:10px;
-}
-
-.score h2{
-font-size:40px;
-color:#fff;
-margin-bottom:10px;
-}
-
-.bet-btn{
-display:inline-block;
-padding:10px 25px;
-background:#ffd700;
-color:#000;
-font-weight:700;
-text-decoration:none;
-border-radius:10px;
-}
-
-.bet-btn:hover{
-transform:scale(1.05);
-}
-
-.premium-marquee{
-    position:relative;
-    width:100%;
-    height:48px;
-    margin:18px 0;
-    overflow:hidden;
-
-    border-radius:50px;
-
-    background:rgba(255,255,255,.08);
-    backdrop-filter:blur(10px);
-
-    border:1px solid rgba(255,255,255,.35);
-
-    box-shadow:
-        inset 0 0 15px rgba(255,255,255,.08),
-        0 0 15px rgba(255,255,255,.12);
-}
-
-/* Glow putih kiri */
-.premium-marquee::before{
-    content:"";
-    position:absolute;
-    left:-40px;
-    top:-20px;
-
-    width:90px;
-    height:90px;
-
-    background:radial-gradient(circle,
-        rgba(255,255,255,.55),
-        transparent 70%);
-}
-
-/* Kilatan putih */
-.premium-marquee::after{
-    content:"";
-    position:absolute;
-    top:-30%;
-    left:-40%;
-
-    width:70px;
-    height:180%;
-
-    background:linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.95),
-        transparent
-    );
-
-    filter:blur(2px);
-    transform:rotate(25deg);
-
-    animation:shine 4s linear infinite;
-}
-
-@keyframes premiumScroll{
-    from{
-        transform:translateX(0);
-    }
-    to{
-        transform:translateX(-100%);
-    }
-}
-
-@keyframes shine{
-
-    0%{
-        left:-40%;
-        opacity:0;
-    }
-
-    15%{
-        opacity:1;
-    }
-
-    35%{
-        left:120%;
-        opacity:0;
-    }
-
-    100%{
-        left:120%;
-        opacity:0;
-    }
-}
-
-.premium-track{
-    display:inline-block;
-    white-space:nowrap;
-    padding-left:100%;
-
-    line-height:54px;
-
-    font-size:11px;
-    font-weight:600;
-
-    color:#ffffff;
-
-    text-shadow:
-        0 0 6px rgba(255,255,255,.5);
-
-    animation:premiumScroll 20s linear infinite;
-}
-
-@keyframes premiumScroll{
-
-    from{
-        transform:translateX(0);
-    }
-
-    to{
-        transform:translateX(-100%);
-    }
-
-}
-
-.slider-container{
-position:relative;
-margin:15px 0;
-overflow:hidden;
-border-radius:17px;
-background:rgba(0,0,0,.55);
-backdrop-filter:blur(10px);
-border:1px solid rgba(255,255,255,.1);
-}
-
-.slider{
-display:flex;
-transition:transform .6s ease;
-}
-
-.slide{
-min-width:100%;
-padding:12px 14px;
-text-align:center;
-}
-
-.slide-title{
-font-size:12px;
-font-weight:600;
-color:#fff;
-margin-bottom:4px;
-}
-
-.slide-time{
-font-size:15px;
-font-weight:600;
-color:#ffd700;
-margin-bottom:10px;
-}
-
-.match{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:10px;
-}
-
-.team{
-width:30%;
-}
-
-.team img{
-width:45px;
-height:45px;
-object-fit:contain;
-margin-bottom:5px;
-}
-
-.team div{
-    font-size:14px;
-}
-
-.score-box{
-width:40%;
-text-align:center;
-}
-
-.score{
-font-size:30px;
-font-weight:600;
-color:#fff;
-margin-bottom:8px;
-}
-
-.bet-now{
-display:inline-block;
-padding:4px 12px;
-font-size:11px;
-background:#ffd700;
-color:#000;
-font-weight:600;
-border-radius:7px;
-text-decoration:none;
-}
-
-.arrow{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-width:30px;
-height:30px;
-border:none;
-border-radius:50%;
-background:rgba(255,255,255,.15);
-color:#fff;
-font-size:15px;
-cursor:pointer;
-z-index:10;
-}
-
-.prev{
-left:10px;
-}
-
-.next{
-right:10px;
-}
-
-.dots{
-display:flex;
-justify-content:center;
-gap:8px;
-padding:15px;
-}
-
-.dot{
-width:10px;
-height:10px;
-border-radius:50%;
-background:#666;
-cursor:pointer;
-}
-
-.dot.active{
-background:#ffd700;
-box-shadow:0 0 10px gold;
-}
-
-.group-tabs{
-display:flex;
-gap:8px;
-overflow-x:auto;
-padding-bottom:10px;
-margin-bottom:15px;
-}
-
-.group-tabs::-webkit-scrollbar{
-display:none;
-}
-
-.group-btn{
-border:none;
-padding:10px 18px;
-border-radius:30px;
-background:#eee;
-font-weight:700;
-cursor:pointer;
-white-space:nowrap;
-}
-
-.group-btn.active{
-background:#111827;
-color:#fff;
-}
-
-.standing-card{
-background:#f3f4f6;
-border-radius:20px;
-padding:15px;
-color:#111;
-}
-
-.standing-header{
-display:grid;
-grid-template-columns:50px 1fr 50px 60px 50px;
-padding-bottom:15px;
-font-size:13px;
-color:#777;
-}
-
-.standing-row{
-display:grid;
-grid-template-columns:50px 1fr 50px 60px 50px;
-align-items:center;
-padding:10px 0;
-}
-
-.rank{
-width:28px;
-height:28px;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-font-weight:700;
-color:#fff;
-}
-
-.first{
-background:#16a34a;
-}
-
-.second{
-background:#16a34a;
-}
-
-.third{
-background:#d1d5db;
-color:#000;
-}
-
-.fourth{
-background:#e5e7eb;
-color:#000;
-}
-
-.team-info{
-display:flex;
-align-items:center;
-gap:10px;
-font-weight:600;
-}
-
-.team-info img{
-width:32px;
-height:32px;
-border-radius:50%;
-object-fit:cover;
-border:1px solid #ddd;
-}
-
-.group-content{
-display:none;
-}
-
-#groupA{
-display:block;
-}
-
-.top-marquee{
-    width:100%;
-    height:48px;
-    margin:18px 0;
-    overflow:hidden;
-    display:flex;
-    align-items:center;
-
-    position:relative;
-
-    border-radius:30px;
-    border:1px solid rgba(255,255,255,.35);
-
-    background:rgba(255,255,255,.08);
-    backdrop-filter:blur(14px);
-
-    box-shadow:
-    inset 0 0 20px rgba(255,255,255,.08),
-    0 0 15px rgba(255,215,0,.18);
-}
-/* Glow putih kiri */
-.top-marquee::before{
-    content:"";
-    position:absolute;
-    left:-35px;
-    top:-30px;
-
-    width:90px;
-    height:90px;
-
-    background:radial-gradient(
-        circle,
-        rgba(255,255,255,.55),
-        transparent 70%);
-}
-
-/* Efek kilat */
-.top-marquee::after{
-    content:"";
-    position:absolute;
-    top:-30%;
-    left:-40%;
-
-    width:70px;
-    height:180%;
-
-    background:linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.95),
-        transparent
-    );
-
-    filter:blur(2px);
-    transform:rotate(25deg);
-
-    animation:shineTop 5s linear infinite;
-}
-
-.top-marquee span{
-
-    display:inline-block;
-
-    white-space:nowrap;
-
-    padding-left:100%;
-
-    line-height:42px;
-
-    font-size:11px;
-
-    font-weight:600;
-
-    color:#ffffff;
-
-    text-shadow:
-        0 0 5px rgba(255,255,255,.6);
-
-    animation:marqueeTop 20s linear infinite;
-}
-
-@keyframes marquee{
-0%{
-transform:translateX(0);
-}
-100%{
-transform:translateX(-100%);
-}
-}
-
-@keyframes marqueeTop{
-
-    from{
-        transform:translateX(0);
-    }
-
-    to{
-        transform:translateX(-100%);
-    }
-
-}
-
-@keyframes shineTop{
-
-    0%{
-        left:-40%;
-        opacity:0;
-    }
-
-    15%{
-        opacity:1;
-    }
-
-    35%{
-        left:120%;
-        opacity:0;
-    }
-
-    100%{
-        left:120%;
-        opacity:0;
-    }
-
-}
-
-body{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-overflow-x:hidden;
-
-padding-top:35px;
-
-background:
-linear-gradient(rgba(0,0,0,.26),rgba(0,0,0,.25)),
-url('https://i.ibb.co/rLGHcqQ/image.png');
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
-}
-
-</style>
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
+
 <body>
 
-<div class="container">
+<!-- ================================= -->
+<!-- BACKGROUND ANIMASI -->
+<!-- ================================= -->
 
-<div class="logo">
-⚽FIFA WORLD CUP 2026⚽
-</div>
+<div class="animated-bg">
 
-<div class="hero-logo">
-    <img src="https://i.ibb.co/zVqc9GWL/image.png" alt="RAGAM4D">
-</div>
+    <span class="circle c1"></span>
 
-<div class="top-marquee">
-<span>
-🔊 Ragam4D Menghadirkan Pengalaman Hiburan Digital Generasi Baru Dengan Akses Responsif, Pilihan Permainan Interaktif, Sistem Stabil, Dan Layanan Online Yang Aktif Setiap Hari Untuk Kenyamanan Pengguna.
-</span>
-</div>
+    <span class="circle c2"></span>
 
-<div class="slider-container">
+    <span class="circle c3"></span>
 
-<button class="arrow prev" onclick="prevSlide()">❮</button>
-<button class="arrow next" onclick="nextSlide()">❯</button>
-
-<div class="slider" id="slider">
-
-<div class="slide">
-
-<div class="slide-title">
-⚽FIFA WORLD CUP 2026⚽
-</div>
-
-<div class="slide-time">
-19 JUL 2026 — 04:00 WIB
-</div>
-
-<div class="match">
-
-<div class="team">
-<img src="https://i.ibb.co/DDV8tmBk/image.png">
-<div>France</div>
-</div>
-
-<div class="score-box">
-<div class="score">4 : 6</div>
-<a href="https://ragam4d03.com/" class="bet-now">FULL TIME</a>
-</div>
-
-<div class="team">
-<img src="https://i.ibb.co/gMR3sDBX/image.png">
-<div>England</div>
-</div>
-
-</div>
-</div>
-
-<div class="slide">
-
-<div class="slide-title">
-⚽FIFA WORLD CUP 2026⚽
-</div>
-
-<div class="slide-time">
-20 JUL 2026 — 02:00 WIB
-</div>
-
-<div class="match">
-
-<div class="team">
-<img src="https://i.ibb.co/bjc3H7ct/image.png">
-<div>Spain</div>
-</div>
-
-<div class="score-box">
-<div class="score">1 : 0</div>
-<a href="https://ragam4d03.com/" class="bet-now">FULL  EXTRATIME</a>
-</div>
-
-<div class="team">
-<img src="https://i.ibb.co/mVCghVQq/image.png">
-<div>Argentina</div>
-</div>
-
-</div>
-</div>
-
+    <span class="circle c4"></span>
 
 </div>
 
-<div class="dots">
-<span class="dot active"></span>
-<span class="dot"></span>
-</div>
+<div class="stars">
+
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
 
 </div>
 
-<div class="premium-marquee">
-    <div class="premium-track">
-        ✨ BROZE FINAL AND FINAL ! ! ! PERJALANAN PANJANG TELAH MENCAPAI PUNCAKNYA. DUA TIM TERBAIK DUNIA AKAN BERTARUNG DEMI SATU TUJUAN: MENGANGKAT TROFI PIALA DUNIA DAN MENGUKIR SEJARAH SEBAGAI JUARA DUNIA 2026. ✨
+    <!-- ===================== -->
+    <!-- SPLASH SCREEN -->
+    <!-- ===================== -->
+
+    <div id="splash-screen">
+
+        <img src="https://i.ibb.co/5hhW7cx0/image.png" class="logo">
+
+        <h1>NOTE TABUNGAN</h1>
+
+        <p>Sebentar yaa^^ Semangat Nabungnya...</p>
+
+        <div class="loader"></div>
+
     </div>
-</div>
 
-<a href="javascript:void(0)" class="btn" onclick="toggleJadwal()">
-📅 JADWAL PERTANDINGAN
-</a>
+    <!-- ===================== -->
+    <!-- LOGIN -->
+    <!-- ===================== -->
 
-<div id="jadwal" class="jadwal-box">
-~19 JULI 04:00 WIB<br>~FRANCE vs ENGLAND<br>~BET HDP : ENGLAND +( 0.5-1 )<br><br>
-~20 JULI 02:00 WIB<br>~SPAIN vs ARGENTINA<br>~BET HDP : SPAIN -( 0-0.5 )<br><br>
-</div>
+    <section id="login-page">
 
-<script>
-function toggleJadwal() {
-  var box = document.getElementById("jadwal");
+        <div class="login-card">
 
-  if (box.style.display === "block") {
-    box.style.display = "none";
-  } else {
-    box.style.display = "block";
-  }
-}
-</script>
+            <img src="https://i.ibb.co/sdd23mHL/image.png" class="login-logo">
 
-<a href="javascript:void(0)" class="btn" onclick="toggleBox('prediksi')">
-🎯 PREDIKSI PERTANDINGAN
-</a>
+            <h2>Selamat Datang</h2>
 
-<div id="prediksi" class="box">
-~19 JULI 04:00 WIB<br>~FRANCE 1 - 2 ENGLAND<br>~PREDIKSI OU: UNDER ( 3-3.5 )<br><br>
-~20 JULI 01:30 WIB<br>~SPAIN 2 - 0 ARGENTINA<br>~PREDIKSI OU: UNDER (2-2.5 )<br><br>
-</div>
+            <p>Masukkan PIN Anda</p>
 
-<script>
-function toggleBox(id){
-let el=document.getElementById(id);
+            <input
+                type="password"
+                id="pinInput"
+                maxlength="6"
+                placeholder="••••••">
 
-if(el.style.display==="block"){
-el.style.display="none";
-}else{
-el.style.display="block";
-}
-}
-</script>
+            <button id="loginBtn">
 
-<a href="https://www.fifa.com/id/tournaments/mens/worldcup/canadamexicousa2026" class="btn">
-📰 BERITA PILDUN 2026
-</a>
+                <i class="fa-solid fa-lock"></i>
 
-<a href="https://ragam4d03.com/" class="btn">
-🌐 LOGIN
-</a>
+                LOGIN
 
-<a href="https://ertepe.luvtoberi.com/index.html?rtp=ragam4d" class="btn special">
-🎰 RTP LIVE SLOT
-</a>
+            </button>
 
-<div class="social">
+        </div>
 
-<a href="https://api.whatsapp.com/send/?phone=6282210964269&text&type=phone_number&app_absent=0">
-<i class="fab fa-whatsapp"></i>
-</a>
+    </section>
 
-<a href="https://t.me/rgmoffc">
-<i class="fab fa-telegram"></i>
-</a>
+    <!-- ===================== -->
+    <!-- APLIKASI -->
+    <!-- ===================== -->
 
-<a href="https://www.facebook.com/profile.php?id=61574308563713">
-<i class="fab fa-facebook-f"></i>
-</a>
+    <main id="app">
 
-<a href="https://id.pinterest.com/ragam_4d/">
-<i class="fab fa-pinterest-p"></i>
-</a>
+        <!-- HEADER -->
+
+        <header>
+
+<div class="header">
+
+    <img src="https://i.ibb.co/5hhW7cx0/image.png">
+
+    <span class="note-title">NOTE TABUNGAN</span>
 
 </div>
 
-<div class="footer">
-PIALADUNIA 2026 by ragam4d
-</div>
+        </header>
+
+        <!-- ================================= -->
+
+        <!-- HOME -->
+
+        <!-- ================================= -->
+
+        <section id="home" class="page active">
+
+            <div class="rekening-card">
+
+                <div class="rekening-top">
+
+                    <div>
+
+                        <small>Nama Rekening</small>
+
+                        <h2 id="namaRekening">
+
+                            MUTIA PALASARI
+
+                        </h2>
+
+                    </div>
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+                <hr>
+
+                <div class="rekening-number">
+
+                    <small>Nomor Rekening</small>
+
+                    
+					<div class="rekening-row">
+					
+					 <h3 id="nomorRekening">
+
+                         901663014851
+
+                    </h3>
+					
+					 <span class="bank-badge">
+					 
+					     SEABANK
+					
+					</span>	
+				
+				</div>	
+
+                    <button id="copyBtn">
+
+                        <i class="fa-regular fa-copy"></i>
+
+                        Salin Rekening
+
+                    </button>
+
+                </div>
+
+                <hr>
+
+<div class="saldo-box">
+
+    <small>Saldo Utama</small>
+
+    <h1 id="saldo">
+        Rp0
+    </h1>
+
+<div class="saldo-info">
+
+    <div>
+
+        <small>Masuk Hari Ini</small>
+
+        <h4 id="todayMasuk">Rp0</h4>
+
+    </div>
+
+    <div>
+
+        <small>Keluar Hari Ini</small>
+
+        <h4 id="todayKeluar">Rp0</h4>
+
+    </div>
 
 </div>
 
-<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=3be16e60-21d4-4e28-827f-06fa4f5c339e"></script>
+</div>
 
-<script>
+            </div>
 
-let currentSlide = 0;
+            <!-- MENU -->
 
-const slider = document.getElementById("slider");
-const dots = document.querySelectorAll(".dot");
+            <div class="menu-grid">
 
-function showSlide(index){
+                <button id="saldoMasuk">
 
-const total = document.querySelectorAll(".slide").length;
+                    <i class="fa-solid fa-circle-plus"></i>
 
-if(index >= total) currentSlide = 0;
-else if(index < 0) currentSlide = total - 1;
-else currentSlide = index;
+                    Saldo Masuk
 
-slider.style.transform =
-`translateX(-${currentSlide * 100}%)`;
+                </button>
 
-dots.forEach(dot=>dot.classList.remove("active"));
-dots[currentSlide].classList.add("active");
-}
+                <button id="saldoKeluar">
 
-function nextSlide(){
-showSlide(currentSlide + 1);
-}
+                    <i class="fa-solid fa-circle-minus"></i>
 
-function prevSlide(){
-showSlide(currentSlide - 1);
-}
+                    Saldo Keluar
 
-dots.forEach((dot,index)=>{
-dot.addEventListener("click",()=>{
-showSlide(index);
-});
-});
+                </button>
 
-setInterval(()=>{
-nextSlide();
-},5000);
 
-</script>
+        </section>
 
-<script>
-document.addEventListener('contextmenu', e => e.preventDefault());
+        <!-- ================================= -->
 
-document.onkeydown = function(e){
-  if(
-    e.keyCode == 123 ||
-    (e.ctrlKey && e.shiftKey && e.keyCode == 73) ||
-    (e.ctrlKey && e.shiftKey && e.keyCode == 74) ||
-    (e.ctrlKey && e.keyCode == 85) ||
-    (e.ctrlKey && e.keyCode == 83)
-  ){
-    return false;
-  }
-};
+        <!-- MUTASI -->
 
-setInterval(function(){
-  if(
-    window.outerWidth - window.innerWidth > 160 ||
-    window.outerHeight - window.innerHeight > 160
-  ){
-    document.body.innerHTML =
-    "<h1 style='color:white;text-align:center;margin-top:100px'>ACCESS DENIED</h1>";
-  }
-},1000);
-</script>
+        <!-- ================================= -->
+
+        <section id="mutasi" class="page">
+
+            <div class="page-title">
+
+                <h2>
+
+                    Riwayat Transaksi
+
+                </h2>
+
+            </div>
+
+            <div id="mutasiList">
+
+                <!-- Otomatis dari Javascript -->
+
+            </div>
+
+        </section>
+
+        <!-- ================================= -->
+
+        <!-- PROFIL -->
+
+        <!-- ================================= -->
+
+        <section id="profil" class="page">
+
+            <div class="profile-card">
+
+                <img src="images/avatar.png">
+
+                <h2 id="profilNama">
+
+                    MUTIA PALASARI
+
+                </h2>
+
+                <p id="profilRekening">
+
+                    901663014851
+
+                </p>
+
+            </div>
+
+            <div class="setting-list">
+
+                <button id="ubahNama">
+
+                    <i class="fa-solid fa-user-pen"></i>
+
+                    Ganti Nama
+
+                </button>
+
+                <button id="ubahPin">
+
+                    <i class="fa-solid fa-key"></i>
+
+                    Ganti PIN
+
+                </button>
+
+                <button id="logout">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ================================= -->
+
+    <!-- POPUP SALDO -->
+
+    <!-- ================================= -->
+
+<div id="popupSaldo" class="popup">
+
+    <div class="popup-box">
+
+        <h2 id="popupTitle">
+
+            Input Saldo
+
+        </h2>
+
+        <input
+        type="number"
+        id="nominal"
+        placeholder="Masukkan Nominal">
+
+        <textarea
+        id="keterangan"
+        placeholder="Masukkan Keterangan"></textarea>
+
+        <button id="simpanSaldo">
+
+            Simpan
+
+        </button>
+
+        <button id="batalPopup">
+
+            Batal
+
+        </button>
+
+    </div>
+
+</div>
+
+
+    </div>
+
+    <!-- ================================= -->
+
+    <!-- POPUP GANTI NAMA -->
+
+    <!-- ================================= -->
+
+    <div id="popupNama" class="popup">
+
+        <div class="popup-box">
+
+            <h2>
+
+                Ganti Nama
+
+            </h2>
+
+            <input
+                type="text"
+                id="namaBaru"
+                placeholder="Nama Baru">
+
+            <button id="simpanNama">
+
+                Simpan
+
+            </button>
+
+            <button id="batalNama">
+
+                Batal
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ================================= -->
+
+    <!-- POPUP GANTI PIN -->
+
+    <!-- ================================= -->
+
+    <div id="popupPin" class="popup">
+
+        <div class="popup-box">
+
+            <h2>
+
+                Ganti PIN
+
+            </h2>
+
+            <input
+                type="password"
+                id="pinLama"
+                placeholder="PIN Lama">
+
+            <input
+                type="password"
+                id="pinBaru"
+                placeholder="PIN Baru">
+
+            <button id="simpanPin">
+
+                Simpan
+
+            </button>
+
+            <button id="batalPin">
+
+                Batal
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ================================= -->
+
+    <!-- TOAST -->
+
+    <!-- ================================= -->
+
+    <div id="toast">
+
+        Berhasil
+
+    </div>
+
+    <!-- ================================= -->
+
+    <!-- BOTTOM NAVIGATION -->
+
+    <!-- ================================= -->
+
+    <nav class="bottom-nav">
+
+        <button class="nav-btn active" data-page="home">
+
+            <i class="fa-solid fa-house"></i>
+
+            <span>Home</span>
+
+        </button>
+
+        <button class="nav-btn" data-page="mutasi">
+
+            <i class="fa-solid fa-file-lines"></i>
+
+            <span>Mutasi</span>
+
+        </button>
+
+        <button class="nav-btn" data-page="profil">
+
+            <i class="fa-solid fa-user"></i>
+
+            <span>Profil</span>
+
+        </button>
+
+    </nav>
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
